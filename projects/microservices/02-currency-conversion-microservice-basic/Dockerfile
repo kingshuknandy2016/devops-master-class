@@ -6,5 +6,5 @@ RUN mvn -f /home/app/projects/microservices/02-currency-conversion-microservice-
 FROM openjdk:8-jdk-alpine
 VOLUME /tmp
 EXPOSE 8100
-COPY --from=build /home/appprojects/microservices/02-currency-conversion-microservice-basic/target/*.jar app.jar
+COPY --from=build /home/app/projects/microservices/02-currency-conversion-microservice-basic/target/*.jar app.jar
 ENTRYPOINT [ "sh", "-c", "java $JAVA_OPTS -Djava.security.egd=file:/dev/./urandom -jar /app.jar" ]
