@@ -22,8 +22,8 @@ spec:
         app: currency-conversion
     spec:
       containers:
-      - image: in28min/currency-conversion:0.0.1-RELEASE #CHANGE
-        imagePullPolicy: IfNotPresent
+      - image: gcr.io/tekton-demo-1/spring-microservice2-img:latest #CHANGE
+        imagePullPolicy: Always
         name: currency-conversion
         # env:
         #   - name: CURRENCY_EXCHANGE_SERVICE_HOST
