@@ -34,6 +34,7 @@ public class CurrencyConversionController {
 
 		LOGGER.info("Received Request to convert from {} {} to {}. ", quantity, from, to);
 
+		// Call the dependent i.e. producer API
 		CurrencyConversionBean response = proxy.retrieveExchangeValue(from, to);
 
 		BigDecimal convertedValue = quantity.multiply(response.getConversionMultiple());
