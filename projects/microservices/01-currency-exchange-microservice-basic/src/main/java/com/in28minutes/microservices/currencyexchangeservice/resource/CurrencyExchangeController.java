@@ -17,6 +17,24 @@ public class CurrencyExchangeController {
 
 	private static final Logger LOGGER = LoggerFactory.getLogger(CurrencyExchangeController.class);
 
+	public ExchangeValueRepository getRepository() {
+		return repository;
+	}
+
+	public void setRepository(
+			ExchangeValueRepository repository) {
+		this.repository = repository;
+	}
+
+	public InstanceInformationService getInstanceInformationService() {
+		return instanceInformationService;
+	}
+
+	public void setInstanceInformationService(
+			InstanceInformationService instanceInformationService) {
+		this.instanceInformationService = instanceInformationService;
+	}
+
 	@Autowired
 	private ExchangeValueRepository repository;
 
@@ -49,8 +67,6 @@ public class CurrencyExchangeController {
 	}
 
 	private void printAllHeaders(Map<String, String> headers) {
-		headers.forEach((key, value) -> {
-			LOGGER.info(String.format("Header '%s' = %s", key, value));
-		});
+		headers.forEach((key, value) -> LOGGER.info(String.format("Header '%s' = %s", key, value)));
 	}
 }
